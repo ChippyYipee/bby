@@ -1,244 +1,265 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="th">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>bby do you love me?</title>
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg: #ffeff6; /* pastel pink */
-      --card: #fff;
-      --accent: #ff8fb1;
-      --muted: #b77a9a;
-      --shadow: 0 10px 30px rgba(216,58,103,0.12);
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Baloo 2', sans-serif;
-      background: radial-gradient(1200px 600px at 10% 10%, rgba(255,230,245,0.6), transparent), var(--bg);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:24px;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-    }
-    .card{
-      width:100%;
-      max-width:520px;
-      background:linear-gradient(180deg, rgba(255,255,255,0.9), #fff);
-      border-radius:20px;
-      padding:28px;
-      text-align:center;
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(255,255,255,0.6);
-      position:relative;
-      overflow:hidden;
-    }
-    .image-wrap{
-      width:180px;
-      height:180px;
-      margin:0 auto 18px;
-      border-radius:50%;
-      overflow:hidden;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      border:10px solid rgba(255,255,255,0.8);
-      box-shadow: 0 8px 20px rgba(200,100,140,0.12);
-      background: linear-gradient(135deg,#fff,#ffeef8);
-    }
-    .image-wrap img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      display:block;
-    }
-    h1{
-      font-family:'Baloo 2', 'Inter', sans-serif;
-      font-size:26px;
-      margin:8px 0 6px;
-      color:#4a2840;
-      letter-spacing:0.2px;
-    }
-    p.lead{
-      margin:0 0 18px;
-      color:var(--muted);
-      font-size:14px;
-    }
-    .controls{
-      display:flex;
-      gap:12px;
-      justify-content:center;
-    }
-    button{
-      appearance:none;
-      border:0;
-      padding:12px 22px;
-      font-size:15px;
-      border-radius:12px;
-      cursor:pointer;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-      transition:transform .18s ease, box-shadow .18s ease;
-      user-select:none;
-    }
-    button:active{transform:translateY(2px)}
-    .yes{
-      background: linear-gradient(180deg,#ff6f98,#ff4b7a);
-      color:white;
-      font-weight:700;
-    }
-    .no{
-      background:transparent;
-      border:2px solid rgba(74,40,64,0.08);
-      color:#6f4a5f;
-      padding:10px 18px;
-    }
-    .small-note{
-      margin-top:14px;
-      font-size:13px;
-      color:#9e6b87;
-    }
-    /* floating hearts animation */
-    .hearts{
-      pointer-events:none;
-      position:absolute;
-      inset:0;
-    }
-    .heart{
-      position:absolute;
-      width:22px;
-      height:22px;
-      transform-origin:center bottom;
-      opacity:0;
-      background:linear-gradient(180deg,#ff8fb1,#ff4b7a);
-      clip-path: path('M10 3C10 1 8.6 0 7 0C5.4 0 4 1 4 3C4 5 7 7.1 10 10C13 7.1 16 5 16 3C16 1 14.6 0 13 0C11.4 0 10 1 10 3Z');
-    }
-    /* fallback for clip-path path unsupported: draw with pseudo-element */
-    @supports not (clip-path: path('')){
-      .heart{width:18px;height:18px;background:transparent}
-      .heart::before{content:'';position:absolute;left:0;top:0;width:100%;height:100%;background:linear-gradient(180deg,#ff8fb1,#ff4b7a);border-radius:8px;transform:rotate(45deg)}
-    }
-    /* responsive */
-    @media (max-width:420px){
-      .card{padding:18px;border-radius:16px}
-      .image-wrap{width:140px;height:140px}
-      h1{font-size:20px}
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>หมูจิ๋วเบบิ้ 💖</title>
+
+<style>
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:"Segoe UI", system-ui;
+  background:linear-gradient(135deg,#ffd6ec,#ffeefe,#ffe4f4);
+  overflow:hidden;
+}
+
+.card{
+  position:relative;
+  width:360px;
+  background:white;
+  border-radius:26px;
+  padding:26px;
+  text-align:center;
+  box-shadow:0 25px 60px rgba(255,120,180,.35);
+  transition:.25s;
+}
+
+img{
+  width:220px;
+  border-radius:18px;
+  margin-bottom:8px;
+}
+
+h1{
+  margin:10px 0 6px;
+  color:#ff4da6;
+}
+
+.sub{
+  color:#a65a86;
+  margin-bottom:12px;
+}
+
+.button-area{
+  position:relative;
+  height:180px;
+}
+
+button{
+  position:absolute;
+  border:0;
+  padding:12px 20px;
+  border-radius:999px;
+  font-size:16px;
+  cursor:pointer;
+  transition:.2s;
+}
+
+#yesBtn{
+  background:#ff66b2;
+  color:white;
+  left:40px;
+  top:90px;
+  font-weight:700;
+}
+
+#noBtn{
+  background:#eeeeee;
+  left:220px;
+  top:90px;
+}
+
+.confettiPiece{
+  position:fixed;
+  width:8px;
+  height:12px;
+  pointer-events:none;
+}
+
+.heart{
+  position:fixed;
+  font-size:22px;
+  pointer-events:none;
+}
+
+.flash{
+  position:fixed;
+  inset:0;
+  background:white;
+  opacity:0;
+  pointer-events:none;
+}
+
+.flash.show{
+  animation:flash .6s ease;
+}
+
+@keyframes flash{
+  0%{opacity:0}
+  40%{opacity:.9}
+  100%{opacity:0}
+}
+
+.shake{
+  animation:shake .35s ease;
+}
+
+@keyframes shake{
+  0%{transform:translateX(0)}
+  25%{transform:translateX(-8px)}
+  50%{transform:translateX(8px)}
+  75%{transform:translateX(-6px)}
+  100%{transform:translateX(0)}
+}
+</style>
 </head>
+
 <body>
-  <div class="card" id="card">
-    <div class="image-wrap">
-      <img src="2e0d3c43-aaa6-41a4-9027-c7e19d06bf27.png" alt="cute kittens in santa hats">
-    </div>
-    <h1 id="question">bby do you love me</h1>
-    <p class="lead" id="sub">(be honest, pls)</p>
 
-    <div class="controls">
-      <button class="yes" id="yesBtn">Yes 💖</button>
-      <button class="no" id="noBtn">No 😿</button>
-    </div>
-    <div class="small-note" id="note">Tip: try to click both buttons...</div>
+<div class="flash" id="flash"></div>
 
-    <div class="hearts" id="hearts"></div>
-  </div>
+<div class="card" id="card">
 
-  <script>
-    const yes = document.getElementById('yesBtn');
-    const no = document.getElementById('noBtn');
-    const card = document.getElementById('card');
-    const hearts = document.getElementById('hearts');
-    const question = document.getElementById('question');
-    const sub = document.getElementById('sub');
+<img src="cats.png">
+<h1>เบบิ้รักหมูจิ๋วมั้ย 🐷💖</h1>
+<div class="sub" id="sub">ตอบดีๆนะ เบบิ้จิ๋ว ✨</div>
 
-    // Yes button action: pop hearts and change text
-    yes.addEventListener('click', () => {
-      question.textContent = 'yesss i love you too 💞';
-      sub.textContent = "you're the cutest";
-      yes.animate([
-        { transform: 'scale(1)' },
-        { transform: 'scale(1.08)' },
-        { transform: 'scale(1)' }
-      ], { duration: 300 });
-      spawnHearts(12);
-    });
+<div class="button-area" id="area">
+  <button id="yesBtn">รักเลย!</button>
+  <button id="noBtn">ไม่รัก</button>
+</div>
 
-    // No button dodge behavior: move away on hover
-    no.addEventListener('mouseenter', () => {
-      dodgeNoButton();
-    });
+</div>
 
-    no.addEventListener('click', () => {
-      question.textContent = '...are you serious? 😿';
-      sub.textContent = 'that stings a little';
-      spawnHearts(6);
-    });
+<script>
+/* --------------------
+ELEMENTS
+---------------------*/
+const yesBtn = document.getElementById('yesBtn');
+const noBtn = document.getElementById('noBtn');
+const area = document.getElementById('area');
+const sub = document.getElementById('sub');
+const flash = document.getElementById('flash');
+const card = document.getElementById('card');
 
-    function dodgeNoButton(){
-      const rect = card.getBoundingClientRect();
-      const btnRect = no.getBoundingClientRect();
-      // choose random position inside card for the button
-      const padding = 12;
-      const maxX = rect.width - btnRect.width - padding;
-      const maxY = rect.height - btnRect.height - padding - 40; // leave space for top
-      const x = Math.random() * maxX;
-      const y = Math.random() * maxY + 40;
-      no.style.position = 'absolute';
-      no.style.left = x + 'px';
-      no.style.top = y + 'px';
-      no.style.transition = 'left .25s ease, top .25s ease, transform .15s ease';
-      no.style.transform = 'translateY(-4px)';
-      setTimeout(()=> no.style.transform = 'translateY(0)', 160);
-    }
+let dodgeCount = 0;
+let yesScale = 1;
 
-    // spawn small heart elements that float up
-    function spawnHearts(count){
-      for(let i=0;i<count;i++){
-        const h = document.createElement('div');
-        h.className = 'heart';
-        const startX = Math.random()*90 + 5; // percent
-        const startY = 80 + Math.random()*10; // percent
-        h.style.left = startX + '%';
-        h.style.top = startY + '%';
-        hearts.appendChild(h);
 
-        // animate using JS
-        const dur = 1200 + Math.random()*800;
-        h.animate([
-          { transform: 'translateY(0) scale(0.6)', opacity: 0 },
-          { transform: 'translateY(-80px) scale(1)', opacity: 1, offset: 0.2 },
-          { transform: 'translateY(-160px) scale(0.8)', opacity: 0 }
-        ], { duration: dur, easing: 'cubic-bezier(.2,.8,.2,1)' });
+/* --------------------
+CONFETTI
+---------------------*/
+function spawnConfetti(count){
+ for(let i=0;i<count;i++){
+  const c=document.createElement('div');
+  c.className='confettiPiece';
+  c.style.left=Math.random()*100+'vw';
+  c.style.top='-10px';
+  c.style.background=`hsl(${Math.random()*360},90%,70%)`;
+  document.body.appendChild(c);
 
-        // remove after animation
-        setTimeout(()=>{ h.remove(); }, dur+80);
-      }
-    }
+  c.animate([
+   {transform:'translateY(0) rotate(0)'},
+   {transform:'translateY(100vh) rotate(720deg)'}
+  ],{duration:1400+Math.random()*600});
 
-    // make the no button return to center after a while so user can still click it
-    let idleTimer;
-    function resetNoPosition(){
-      no.style.position = '';
-      no.style.left = '';
-      no.style.top = '';
-      no.style.transition = '';
-    }
-    card.addEventListener('mouseleave', ()=> {
-      clearTimeout(idleTimer);
-      idleTimer = setTimeout(resetNoPosition, 400);
-    });
+  setTimeout(()=>c.remove(),2000);
+ }
+}
 
-    // small playful entrance
-    window.addEventListener('load', ()=>{
-      card.animate([
-        { transform: 'translateY(12px)', opacity:0 },
-        { transform: 'translateY(0)', opacity:1 }
-      ], { duration: 520, easing: 'cubic-bezier(.2,.8,.2,1)' });
-    });
-  </script>
+
+/* --------------------
+HEARTS
+---------------------*/
+function spawnHearts(count){
+ for(let i=0;i<count;i++){
+  const h=document.createElement('div');
+  h.className='heart';
+  h.innerHTML='💖';
+  h.style.left=(40+Math.random()*20)+'vw';
+  h.style.bottom='20vh';
+  document.body.appendChild(h);
+
+  h.animate([
+   {transform:'translateY(0) scale(1)',opacity:1},
+   {transform:'translateY(-260px) scale(1.6)',opacity:0}
+  ],{duration:2000});
+
+  setTimeout(()=>h.remove(),2000);
+ }
+}
+
+
+/* --------------------
+NO BUTTON DODGE (mobile + pc)
+---------------------*/
+function dodgeNo(){
+ const rect = area.getBoundingClientRect();
+ const bw = noBtn.offsetWidth;
+ const bh = noBtn.offsetHeight;
+
+ const x = Math.random()*(rect.width-bw);
+ const y = Math.random()*(rect.height-bh);
+
+ noBtn.style.left = x+'px';
+ noBtn.style.top = y+'px';
+
+ dodgeCount++;
+
+ yesScale += 0.08;
+ yesBtn.style.transform=`scale(${yesScale})`;
+
+ if(dodgeCount==3) sub.textContent="งื้ออ อย่าหนีหมูจิ๋ว 🥺";
+ if(dodgeCount==6) sub.textContent="หมูจิ๋วเริ่มงอนแล้วนะ 😤";
+ if(dodgeCount==9) sub.textContent="กดรักเลยยย 💞";
+}
+
+/* pointer detection */
+area.addEventListener('pointermove',(e)=>{
+ const r = noBtn.getBoundingClientRect();
+ const dx = r.left + r.width/2 - e.clientX;
+ const dy = r.top + r.height/2 - e.clientY;
+ const dist = Math.sqrt(dx*dx + dy*dy);
+
+ if(dist < 120) dodgeNo();
+});
+
+noBtn.addEventListener('pointerdown',(e)=>{
+ e.preventDefault();
+ dodgeNo();
+});
+
+
+/* --------------------
+YES CLICK DRAMATIC
+---------------------*/
+yesBtn.addEventListener('click',()=>{
+ sub.textContent="เย้!!! เบบิ้รักหมูจิ๋ว 💞🐷✨";
+
+ spawnConfetti(160);
+ spawnHearts(20);
+
+ flash.classList.add('show');
+ card.classList.add('shake');
+
+ setTimeout(()=>{
+  flash.classList.remove('show');
+  card.classList.remove('shake');
+ },600);
+});
+
+
+/* --------------------
+RUNTIME TESTS
+---------------------*/
+console.assert(yesBtn);
+console.assert(noBtn);
+console.assert(area);
+</script>
+
 </body>
 </html>
